@@ -20,7 +20,6 @@ public class GameState {
     public int pipeHeight = 512;
     public int pipeY = 0;
 
-    Random random = new Random();
 
     public void reset(Hero newHero) {
         this.hero = newHero;
@@ -31,19 +30,19 @@ public class GameState {
     }
 
     public void moveHero() {
-        velocityY += gravity;
+        velocityY += gravity; //efeito da gravidade no boneco, 60 quadros por segundo
         hero.move(velocityY);
-        if (hero.y > boardHeight) {
+        if (hero.y > boardHeight) { //se o herói cair mais que a altura da tela, o jogo finaliza
             gameOver = true;
         }
     }
 
     public void movePipes() {
         for (Pipe pipe : pipes) {
-            pipe.x += velocityX;
+            pipe.x += velocityX; //movimentação do cano para a esquerda
 
-            if (!pipe.passed && hero.x > pipe.x + pipe.width) {
-                score += 0.5;
+            if (!pipe.passed && hero.x > pipe.x + pipe.width) { //lógica da pontuação
+                score += 0.5; //o valor é divido por 0.5, pois ele passa pelos dois canos o de cima e o de baixo, que ao somar, vai dar 1
                 pipe.passed = true;
             }
 

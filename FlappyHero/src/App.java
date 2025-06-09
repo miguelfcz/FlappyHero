@@ -10,21 +10,26 @@ public class App {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Flappy Hero"); //Janela Principal
 
-        // Carregar imagens
+        // Carregamento das imagens
         Image backgroundImg = new ImageIcon(App.class.getResource("/JogoBG.png")).getImage();
         Image heroImg = new ImageIcon(App.class.getResource("/BonecoJogo.png")).getImage();
         Image topPipeImg = new ImageIcon(App.class.getResource("/toppipe.png")).getImage();
         Image bottomPipeImg = new ImageIcon(App.class.getResource("/bottompipe.png")).getImage();
 
+        //Guarda todas as informações sobre o estado do Jogo
         GameState state = new GameState();
         Hero hero = new Hero(state.boardWidth / 8, state.boardHeight / 3, 58, 40, heroImg);
         state.hero = hero;
 
+        //GamePanel recebe state para saber o que vai ser desenhado na tela e a imagem de fundo
         GamePanel panel = new GamePanel(state, backgroundImg);
+
+        //Cérebro que controla o jogo
         new GameController(state, panel, topPipeImg, bottomPipeImg);
 
+        //Preparação da janela
         frame.add(panel);
-        frame.pack();
+        frame.pack();//Ajuste para o painel caber perfeitamente
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);

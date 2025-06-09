@@ -5,6 +5,8 @@ import java.awt.Image;
 public class Pipe {
     public int x, y, width, height;
     public Image img;
+
+    // Variável para fazer o contador
     public boolean passed = false;
 
     public Pipe(int x, int y, int width, int height, Image img) {

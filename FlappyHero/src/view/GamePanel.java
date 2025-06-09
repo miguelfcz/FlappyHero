@@ -14,12 +14,11 @@ public class GamePanel extends JPanel {
         this.gameState = gameState;
         this.backgroundImg = backgroundImg;
         setPreferredSize(new Dimension(gameState.boardWidth, gameState.boardHeight));
-        setFocusable(true);
+         setFocusable(true);//é a permissão que o GamePanel precisa para entrar na "conversa" do teclado.
     }
 
     @Override
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
+    public void paintComponent(Graphics g) {//conjunto de instruções que o sistema deve seguir toda vez que ele precisa pintar ou repintar essa tela.
         draw(g);
     }
 
