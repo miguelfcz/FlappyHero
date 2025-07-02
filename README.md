@@ -8,11 +8,11 @@ Este projeto é mais do que um simples jogo; é uma homenagem à era dos jogos d
 
 O objetivo foi criar uma experiência fluida e divertida, ao mesmo tempo em que aprofundava meus conhecimentos técnicos na criação de aplicações interativas.
 
-🌟 Visão Geral do Jogo
+### 🌟 Visão Geral do Jogo
 
 Controle o nosso herói através de um perigoso caminho de canos. Com uma mecânica simples de "tocar para pular", sua missão é guiar o personagem pelo maior tempo possível, acumulando pontos a cada obstáculo superado. Parece fácil, mas a precisão é a chave para alcançar um novo recorde!
 
-✨ Funcionalidades Implementadas
+### ✨ Funcionalidades Implementadas
 
     Menu Intuitivo: Uma tela inicial clara para dar início à jornada ou verificar seus recordes.
 
@@ -24,7 +24,7 @@ Controle o nosso herói através de um perigoso caminho de canos. Com uma mecân
 
     Ambientação Sonora: Efeitos sonoros e música de fundo que enriquecem a imersão e a experiência do jogador.
 
-🛠️ Construído Com
+### 🛠️ Construído Com
 
 Este projeto foi desenvolvido utilizando um conjunto de tecnologias robustas e versáteis:
 
@@ -32,7 +32,7 @@ Este projeto foi desenvolvido utilizando um conjunto de tecnologias robustas e v
 
     Swing (Java GUI): Utilizado para a renderização de todos os elementos gráficos e para a criação da interface do usuário. Sua flexibilidade foi fundamental para o controle dos componentes na tela.
 
-🚀 Como Executar o Projeto
+### 🚀 Como Executar o Projeto
 
 Para experimentar o Flappy Hero, siga os passos abaixo:
 
@@ -49,7 +49,7 @@ Para experimentar o Flappy Hero, siga os passos abaixo:
 
         Localize o arquivo App.java e execute-o para iniciar o jogo.
 
-💡 Oportunidades Futuras
+### 💡 Oportunidades Futuras
 
 Este é um projeto em constante evolução. Algumas ideias para o futuro incluem:
 
@@ -59,7 +59,7 @@ Este é um projeto em constante evolução. Algumas ideias para o futuro incluem
 
     Um ranking online para competir com outros jogadores.
 
-💬 Vamos nos Conectar!
+### 💬 Vamos nos Conectar!
 
 Desenvolvido com muita dedicação por Miguel Fonsêca e Italo Henrique Cavalcante. Adoraria receber seu feedback e conectar-me com outros entusiastas de tecnologia e desenvolvimento de jogos!
 
