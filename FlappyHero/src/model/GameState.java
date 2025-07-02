@@ -7,7 +7,8 @@ public class GameState {
     public enum Status {
         MENU,
         PLAYING,
-        GAME_OVER
+        GAME_OVER,
+        STATUS
     }
 
     public int boardWidth = 360;

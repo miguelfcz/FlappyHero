@@ -27,7 +27,7 @@ public class App {
         GamePanel panel = new GamePanel(state, backgroundImg, startImg, statusImg);
 
         //Cérebro que controla o jogo
-        new GameController(state, panel, topPipeImg, bottomPipeImg);
+        new GameController(state, panel, topPipeImg, bottomPipeImg, startImg, statusImg);
 
         //Preparação da janela
         frame.add(panel);

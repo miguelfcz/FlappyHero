@@ -18,15 +18,19 @@ public class GameController implements ActionListener, KeyListener, MouseListene
     Timer placePipeTimer;
     Image topPipeImg;
     Image bottomPipeImg;
+    Image startImg;
+    Image statusImg;
     private AudioPlayer jumpSound;
     private AudioPlayer backgroundMusic;
     private AudioPlayer gameOverSound;
 
-    public GameController(GameState gameState, GamePanel gamePanel, Image topPipeImg, Image bottomPipeImg) {
+    public GameController(GameState gameState, GamePanel gamePanel, Image topPipeImg, Image bottomPipeImg, Image startImg, Image statusImg) {
         this.gameState = gameState;
         this.gamePanel = gamePanel;
         this.topPipeImg = topPipeImg;
         this.bottomPipeImg = bottomPipeImg;
+        this.startImg = startImg;
+        this.statusImg = statusImg;
 
         gamePanel.addKeyListener(this);
         gamePanel.addMouseListener(this);
@@ -90,9 +94,30 @@ public class GameController implements ActionListener, KeyListener, MouseListene
 
     @Override
     public void mousePressed(MouseEvent event) {
+        int x = event.getX();
+        int y = event.getY();
+
         if (gameState.currentStatus == GameState.Status.MENU) {
-            startGame();
-        } else if (gameState.currentStatus == GameState.Status.GAME_OVER) {
+            // CORREÇÃO: Usar o mesmo cálculo do GamePanel para a área de clique
+            int buttonWidth = gameState.boardWidth / 3;
+
+            int startButtonHeight = (int) (startImg.getHeight(gamePanel) * (double) buttonWidth / startImg.getWidth(gamePanel));
+            int statusButtonHeight = (int) (statusImg.getHeight(gamePanel) * (double) buttonWidth / statusImg.getWidth(gamePanel));
+
+            int centerX = gameState.boardWidth / 2 - buttonWidth / 2;
+
+            int startY = gameState.boardHeight / 2 - startButtonHeight;
+            int statusY = gameState.boardHeight / 2 + 20;
+
+            Rectangle startButton = new Rectangle(centerX, startY, buttonWidth, startButtonHeight);
+            Rectangle statusButton = new Rectangle(centerX, statusY, buttonWidth, statusButtonHeight);
+
+            if (startButton.contains(x, y)) {
+                startGame();
+            } else if (statusButton.contains(x, y)) {
+                gameState.currentStatus = GameState.Status.STATUS;
+            }
+        } else if (gameState.currentStatus == GameState.Status.GAME_OVER || gameState.currentStatus == GameState.Status.STATUS) {
             gameState.currentStatus = GameState.Status.MENU;
         }
     }
