@@ -15,6 +15,8 @@ public class App {
         Image heroImg = new ImageIcon(App.class.getResource("/BonecoJogo.png")).getImage();
         Image topPipeImg = new ImageIcon(App.class.getResource("/toppipe.png")).getImage();
         Image bottomPipeImg = new ImageIcon(App.class.getResource("/bottompipe.png")).getImage();
+        Image startImg = new ImageIcon(App.class.getResource("/Start.png")).getImage();
+        Image statusImg = new ImageIcon(App.class.getResource("/Status.png")).getImage();
 
         //Guarda todas as informações sobre o estado do Jogo
         GameState state = new GameState();
@@ -22,7 +24,7 @@ public class App {
         state.hero = hero;
 
         //GamePanel recebe state para saber o que vai ser desenhado na tela e a imagem de fundo
-        GamePanel panel = new GamePanel(state, backgroundImg);
+        GamePanel panel = new GamePanel(state, backgroundImg, startImg, statusImg);
 
         //Cérebro que controla o jogo
         new GameController(state, panel, topPipeImg, bottomPipeImg);
